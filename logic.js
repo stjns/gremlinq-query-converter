@@ -14,11 +14,20 @@ btn.addEventListener('click', () => {
     const bndMtch = inputTxt.match(bindingPtrn);
 
     const allBinds = bndMtch[1].split(',');
+    
+    const bindQueue = [];
 
     allBinds.forEach(binding => {
         const nxtMatch = binding.match(bindingInputPtrn);
         nxtMatch[2] = nxtMatch[2].replaceAll('"', "'");
-        outptxt = outptxt.replaceAll(nxtMatch[1], nxtMatch[2]);
+        bindQueue.push([nxtMatch[1], nxtMatch[2]]);
+        //outptxt = outptxt.replaceAll(nxtMatch[1], nxtMatch[2]);
+    });
+
+    bindQueue = bindQueue.reverse();
+
+    bindQueue.forEach(binding => {
+        outputTxt = outputTxt.replaceAll(binding[1], binding[2]);
     });
 
     outp.value = outptxt;
