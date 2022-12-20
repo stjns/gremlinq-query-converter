@@ -15,7 +15,7 @@ btn.addEventListener('click', () => {
 
     const allBinds = bndMtch[1].split(',');
     
-    const bindQueue = [];
+    let bindQueue = [];
 
     allBinds.forEach(binding => {
         const nxtMatch = binding.match(bindingInputPtrn);
