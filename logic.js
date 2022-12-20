@@ -27,7 +27,7 @@ btn.addEventListener('click', () => {
     bindQueue = bindQueue.reverse();
 
     bindQueue.forEach(binding => {
-        outputTxt = outputTxt.replaceAll(binding[1], binding[2]);
+        outptxt = outptxt.replaceAll(binding[1], binding[2]);
     });
 
     outp.value = outptxt;
