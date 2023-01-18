@@ -4,7 +4,7 @@ const btn = document.getElementById('convert-btn');
 
 const scriptPtrn = /{"Script":"(?<scriptval>[^"]+)"/;
 const bindingPtrn = /,"Bindings":{(?<bindingsval>[^}]+)}/;
-const bindingInputPtrn = /"(?<key>[^"]+)":(?<value>"?[^"]+"?)$/;
+const bindingInputPtrn = /"(?<key>[^"]*)":(?<value>"?[^"]*"?)$/;
 
 btn.addEventListener('click', () => {
     const inputTxt = inp.value;
